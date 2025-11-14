@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Shayan Mazahir</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .under-construction {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .construction-content {
+            max-width: 700px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .construction-icon {
+            font-size: 8rem;
+            margin-bottom: 2rem;
+            animation: bounce 2s infinite;
+        }
+
+        .construction-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .construction-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .construction-text {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            opacity: 0.85;
+        }
+
+        .teaser-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .teaser-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .teaser-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .teaser-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .teaser-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .teaser-desc {
+            font-size: 0.875rem;
+            opacity: 0.8;
+        }
+
+        .progress-bar-container {
+            width: 100%;
+            max-width: 500px;
+            margin: 2rem auto;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 2rem;
+            padding: 0.5rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .progress-label {
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: linear-gradient(90deg, #fbbf24, #f59e0b);
+            border-radius: 1rem;
+            width: 35%;
+            animation: progressPulse 2s infinite;
+        }
+
+        @keyframes progressPulse {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.6;
+            }
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.875rem 2rem;
+            background: white;
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 2rem;
+        }
+
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .particles-construction {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            opacity: 0.3;
+        }
+
+        .gear {
+            position: absolute;
+            font-size: 3rem;
+            opacity: 0.1;
+            animation: rotate 20s linear infinite;
+        }
+
+        .gear:nth-child(1) {
+            top: 10%;
+            left: 10%;
+            animation-duration: 15s;
+        }
+
+        .gear:nth-child(2) {
+            top: 20%;
+            right: 15%;
+            animation-duration: 20s;
+            animation-direction: reverse;
+        }
+
+        .gear:nth-child(3) {
+            bottom: 15%;
+            left: 20%;
+            animation-duration: 25s;
+        }
+
+        .gear:nth-child(4) {
+            bottom: 10%;
+            right: 10%;
+            animation-duration: 18s;
+            animation-direction: reverse;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .coming-soon-badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: rgba(251, 191, 36, 0.2);
+            border: 2px solid #fbbf24;
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            animation: pulse 2s infinite;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="logo.png" alt="Shayan Mazahir" class="logo-image">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#projects" class="nav-link">Projects</a></li>
+                <li><a href="about-me.html" class="nav-link active">About Me</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Under Construction Section -->
+    <section class="under-construction">
+        <div class="particles-construction">
+            <div class="gear">⚙️</div>
+            <div class="gear">⚙️</div>
+            <div class="gear">⚙️</div>
+            <div class="gear">⚙️</div>
+        </div>
+
+        <div class="construction-content">
+            <div class="construction-icon">🚧</div>
+
+            <div class="coming-soon-badge">COMING SOON</div>
+
+            <h1 class="construction-title">Shayan Beyond the Code</h1>
+            <p class="construction-subtitle">Getting personal... just not quite yet 😊</p>
+
+            <p class="construction-text">
+                I'm currently crafting a page that shows who I am beyond the terminal and code editor.
+                Think F1 races, Arduino experiments gone right (and wrong), and maybe some hot takes on why
+                Brooklyn Nine-Nine is the perfect show.
+            </p>
+
+            <div class="progress-bar-container">
+                <div class="progress-label">Page Progress</div>
+                <div class="progress-bar"></div>
+            </div>
+
+            <div class="teaser-grid">
+                <div class="teaser-card">
+                    <div class="teaser-icon">🏎️</div>
+                    <div class="teaser-title">F1 Fanatic</div>
+                    <div class="teaser-desc">DRS zones, tire strategies, and why driver skill still matters</div>
+                </div>
+
+                <div class="teaser-card">
+                    <div class="teaser-icon">🔧</div>
+                    <div class="teaser-title">Hardware Roots</div>
+                    <div class="teaser-desc">From Arduino motor drivers to systematic circuit testing</div>
+                </div>
+
+                <div class="teaser-card">
+                    <div class="teaser-icon">📺</div>
+                    <div class="teaser-title">TV Connoisseur</div>
+                    <div class="teaser-desc">White Collar, Psych, B99 - clever plots over drama</div>
+                </div>
+
+                <div class="teaser-card">
+                    <div class="teaser-icon">🎓</div>
+                    <div class="teaser-title">UWaterloo Life</div>
+                    <div class="teaser-desc">CS 115, GEOG 187, and surviving finals week</div>
+                </div>
+
+                <div class="teaser-card">
+                    <div class="teaser-icon">🎮</div>
+                    <div class="teaser-title">Gaming & Sim</div>
+                    <div class="teaser-desc">From FlightGear to F1 22, building and playing</div>
+                </div>
+
+                <div class="teaser-card">
+                    <div class="teaser-icon">🤖</div>
+                    <div class="teaser-title">Robotics Mentor</div>
+                    <div class="teaser-desc">Leading teams, teaching VEX, winning competitions</div>
+                </div>
+            </div>
+
+            <p class="construction-text">
+                In the meantime, feel free to check out my technical work, or reach out if you want to
+                chat about racing lines, clean code, or why the best debugging tool is still just a good night's sleep.
+            </p>
+
+            <a href="index.html" class="back-button">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+                <span>Back to Portfolio</span>
+            </a>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -4,395 +4,294 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shayan Mazahir - Developer Portfolio</title>
+    <title>Shayan Mazahir - Developer & Builder</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    <!-- Navigation -->
-    <nav id="navbar">
-        <div class="nav-container">
-            <a href="#home" class="nav-logo">
-                <img src="logo.png" alt="Shayan Mazahir" class="logo-image">
-            </a>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="about-me.html" class="nav-link">About Me</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+    <div class="grain"></div>
+    <div class="scroll-progress"></div>
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="particles-bg" id="particles"></div>
-        <div class="hero-content">
-            <div class="hero-badge">Available for Internships</div>
-            <h1 class="hero-title">Hey, I'm <span class="highlight">Shayan Mazahir</span> 👋</h1>
-            <p class="hero-subtitle">First-year student at the University of Waterloo</p>
-            <p class="hero-description">I build things that solve real problems—from Discord bots serving 5,000+ users
-                to robotics systems that win competitions.</p>
-            <div class="hero-buttons">
-                <a href="#projects" class="btn btn-primary">
-                    <span>View Projects</span>
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                        <path d="M7.5 5L12.5 10L7.5 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                    </svg>
-                </a>
-                <a href="https://github.com/Shayan-Mazahir" target="_blank" class="btn btn-secondary">
-                    <span>GitHub</span>
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                        <path
-                            d="M10 2.5C5.85786 2.5 2.5 5.85786 2.5 10C2.5 13.3848 4.7293 16.2452 7.8332 17.2411C8.2082 17.3098 8.35156 17.0739 8.35156 16.8698C8.35156 16.6869 8.34473 16.0739 8.34082 15.4348C6.17871 15.8848 5.73145 14.3411 5.73145 14.3411C5.38672 13.4598 4.89258 13.2239 4.89258 13.2239C4.21094 12.7567 4.94238 12.7661 4.94238 12.7661C5.69531 12.8192 6.10254 13.5489 6.10254 13.5489C6.77539 14.6942 7.87695 14.3598 8.36523 14.1614C8.43164 13.6739 8.62402 13.3395 8.83496 13.1458C7.01855 12.9489 5.10938 12.2942 5.10938 9.27051C5.10938 8.43848 5.40234 7.75879 6.1168 7.22363C6.03809 7.02832 5.78027 6.25879 6.19141 5.23535C6.19141 5.23535 6.82617 5.02832 8.33203 6.03711C8.94141 5.86426 9.57422 5.77832 10.2031 5.77539C10.832 5.77832 11.4648 5.86426 12.0742 6.03711C13.5801 5.02832 14.2148 5.23535 14.2148 5.23535C14.626 6.25879 14.3682 7.02832 14.2895 7.22363C15.0039 7.75879 15.2949 8.43848 15.2949 9.27051C15.2949 12.3005 13.3828 12.9458 11.5605 13.1364C11.8184 13.3645 12.0605 13.8176 12.0605 14.5036C12.0605 15.4864 12.0527 16.2739 12.0527 16.8698C12.0527 17.0739 12.1953 17.3114 12.5742 17.2395C15.6719 16.2395 17.9 13.3786 17.9 10C17.9 5.85786 14.5421 2.5 10 2.5Z"
-                            fill="currentColor" />
-                    </svg>
-                </a>
-            </div>
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <div class="stat-number">6+</div>
-                    <div class="stat-label">Years Experience</div>
-                </div>
-                <div class="stat-divider"></div>
-                <div class="stat-item">
-                    <div class="stat-number">15+</div>
-                    <div class="stat-label">Projects Built</div>
-                </div>
-                <div class="stat-divider"></div>
-                <div class="stat-item">
-                    <div class="stat-number">5K+</div>
-                    <div class="stat-label">Users Served</div>
-                </div>
-            </div>
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+        <div class="logo">
+            <img src="logo.png" alt="Logo" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
         </div>
-        <div class="scroll-indicator">
-            <span>Scroll Down</span>
-            <div class="arrow"></div>
+        <div class="nav-items">
+            <a href="#home" class="nav-item active">🏠</a>
+            <a href="#projects" class="nav-item">💻</a>
+            <a href="#skills" class="nav-item">⚡</a>
+            <a href="#contact" class="nav-item">📬</a>
         </div>
-    </section>
+        </nav>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>I'm a first-year student at the University of Waterloo with <strong>6+ years of
-                            hands-on programming experience</strong>. I started my journey with Discord Bots during Covid, then moved to Arduino and electronics
-                        in high school, where I fell in love with building things that work.</p>
-                    <p>I led a 15-student robotics team to first place in RobOlympics and taught Python fundamentals to
-                        beginner programmers as a Programming Hub Mentor. Now I'm diving deeper into everything from
-                        game development to backend systems to systems programming with Rust.</p>
-                    <p>When I'm not coding, you'll find me stalking Planes on FlightRadar, watching F1 Races, tinkering with electronics, or exploring
-                        new technologies.</p>
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="grid-bg"></div>
+            <div class="hero-content">
+                <div class="status-badge">
+                    <span class="status-dot"></span>
+                    OPEN TO OPPORTUNITIES
                 </div>
-                <div class="about-skills">
-                    <h3>Technologies I Work With</h3>
-                    <div class="skills-grid">
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">Java</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">Flask</span>
-                        <span class="skill-tag">Django</span>
-                        <span class="skill-tag">Node.js</span>
-                        <span class="skill-tag">MongoDB</span>
-                        <span class="skill-tag">Discord.js</span>
-                        <span class="skill-tag">Arduino</span>
-                        <span class="skill-tag">VEX Robotics</span>
-                        <span class="skill-tag">Rust</span>
+                <h1 class="hero-title">
+                    Hi, I'm <span class="glitch" data-text="Shayan">Shayan</span>
+                </h1>
+                <p class="hero-subtitle">
+                    > First Year @ UWaterloo • Builder • Problem Solver
+                </p>
+                <p class="hero-description">
+                    I turn ideas into reality through code. From Discord bots serving 5K+ users to robotics systems
+                    winning competitions, I build things that matter.
+                </p>
+                <div class="cta-buttons">
+                    <a href="#projects" class="cta-btn cta-primary">
+                        View My Work →
+                    </a>
+                    <a href="https://github.com/Shayan-Mazahir" target="_blank" class="cta-btn cta-secondary">
+                        GitHub Profile
+                    </a>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-value" data-target="6">0</span>
+                        <span class="stat-label">years_coding</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value" data-target="20">0</span>
+                        <span class="stat-label">projects_built</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value" data-target="5000">0</span>
+                        <span class="stat-label">users_served</span>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section">
+            <div class="section-header">
+                <div class="section-label">/ SELECTED WORK</div>
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-description">
+                    From AI platforms to robotics systems, here's what I've been building.
+                </p>
+            </div>
+
             <div class="projects-grid">
+                <!-- games.random - FEATURED -->
+                <div class="project-card featured-card">
+                    <div class="project-header">
+                        <div class="project-icon">🎮</div>
+                        <span class="project-status status-live">LIVE</span>
+                    </div>
+                    <div class="project-title-row">
+                        <h3 class="project-title">games.random</h3>
+                        <span class="trophy">🏆</span>
+                    </div>
+                    <p class="project-subtitle">
+                        🥇 Best Product - UW CS Club Project Program
+                    </p>
+                    <p class="project-description">
+                        AI-powered platform that generates games from plain English and teaches programming through
+                        real-time code highlighting. Built with Claude API, Monaco Editor, and Express.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Node.js</span>
+                        <span class="tag">Claude AI</span>
+                        <span class="tag">MongoDB</span>
+                        <span class="tag">Monaco</span>
+                    </div>
+                    <div class="project-footer">
+                        <a href="https://github.com/Shayan-Mazahir/games.random" target="_blank" class="project-link">
+                            View on GitHub →
+                        </a>
+                        <span class="project-meta">👥 3 Contributors</span>
+                    </div>
+                </div>
 
-                <!-- Project 1: Pac-Man -->
+                <!-- Discord Bots -->
                 <div class="project-card">
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <span>🎮</span>
-                        </div>
-                        <div class="project-overlay">
-                            <a href="https://github.com/Shayan-Mazahir/PAC-MAN" target="_blank" class="overlay-btn">View
-                                Project</a>
-                        </div>
+                    <div class="project-header">
+                        <div class="project-icon">🤖</div>
+                        <span class="project-status status-private">PRIVATE</span>
                     </div>
-                    <div class="project-content">
-                        <div class="project-header">
-                            <h3 class="project-title">Pac-Man Clone</h3>
-                            <span class="project-status-badge in-progress">In Development</span>
-                        </div>
-                        <p class="project-description">A Pac-Man replica built with Java and Processing, featuring
-                            collision detection, ghost AI with pathfinding logic, and modular architecture for easy
-                            expansion.</p>
-                        <div class="project-tags">
-                            <span class="tag">Java</span>
-                            <span class="tag">Processing</span>
-                            <span class="tag">Game Dev</span>
-                            <span class="tag">AI</span>
-                        </div>
-                        <div class="project-footer">
-                            <div class="project-meta">
-                                <span class="meta-item">
-                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-                                        <path
-                                            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
-                                    </svg>
-                                    Open Source
-                                </span>
-                            </div>
-                        </div>
+                    <h3 class="project-title">Discord Bot Suite</h3>
+                    <p class="project-description">
+                        Custom moderation and utility bots deployed across 15+ servers. Built with Discord.js and
+                        Discord.py, serving 5,000+ active users daily.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Discord.js</span>
+                        <span class="tag">MongoDB</span>
                     </div>
+                    <span class="project-link disabled">
+                        Code Available on Request
+                    </span>
                 </div>
 
-                <!-- Project 2: School Club Directory -->
+                <!-- Club Directory -->
                 <div class="project-card">
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <span>🔐</span>
-                        </div>
-                        <div class="project-overlay">
-                            <a href="https://github.com/Louise-Arbor-SS-Programming-Hub/Back-end" target="_blank"
-                                class="overlay-btn">View Project</a>
-                        </div>
+                    <div class="project-header">
+                        <div class="project-icon">🔐</div>
+                        <span class="project-status status-live">LIVE</span>
                     </div>
-                    <div class="project-content">
-                        <div class="project-header">
-                            <h3 class="project-title">School Club Directory Backend</h3>
-                            <span class="project-status-badge completed">Production</span>
-                        </div>
-                        <p class="project-description">Flask-based REST API with Google OAuth authentication, SSL/HTTPS
-                            implementation, and MongoDB integration. Serves as the backend for my high school's club
-                            management platform.</p>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Flask</span>
-                            <span class="tag">MongoDB</span>
-                            <span class="tag">OAuth</span>
-                        </div>
-                        <div class="project-footer">
-                            <div class="project-meta">
-                                <span class="meta-item">
-                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-                                        <path
-                                            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
-                                    </svg>
-                                    Open Source
-                                </span>
-                            </div>
-                        </div>
+                    <h3 class="project-title">Club Directory Backend</h3>
+                    <p class="project-description">
+                        Flask REST API powering my high school's club management platform. Features OAuth
+                        authentication, SSL/HTTPS, and MongoDB for data persistence.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Flask</span>
+                        <span class="tag">MongoDB</span>
+                        <span class="tag">OAuth</span>
                     </div>
+                    <a href="https://github.com/Louise-Arbor-SS-Programming-Hub/Back-end" target="_blank"
+                        class="project-link">
+                        View Code →
+                    </a>
                 </div>
 
-                <!-- Project 3: Discord Bots -->
-                <div class="project-card featured">
-                    <div class="featured-badge">⭐ Most Impact</div>
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <span>🤖</span>
-                        </div>
-                        <div class="project-overlay">
-                            <span class="overlay-text">Code available upon request</span>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-header">
-                            <h3 class="project-title">Discord Bot Suite</h3>
-                            <span class="project-status-badge private">Private</span>
-                        </div>
-                        <p class="project-description">Custom moderation and utility bots deployed across 15+ servers,
-                            serving 5,000+ users. Built with Discord.js and Discord.py with MongoDB for persistent
-                            storage.</p>
-                        <div class="project-tags">
-                            <span class="tag">JavaScript</span>
-                            <span class="tag">Python</span>
-                            <span class="tag">Discord.js</span>
-                            <span class="tag">MongoDB</span>
-                        </div>
-                        <div class="project-footer">
-                            <div class="project-meta">
-                                <span class="meta-item">
-                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-                                        <path d="M8 9.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
-                                        <path fill-rule="evenodd"
-                                            d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zm.5 4.75a.75.75 0 00-1.5 0v3.5a.75.75 0 001.5 0v-3.5z" />
-                                    </svg>
-                                    5,000+ Active Users
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 4: Learning Rust -->
+                <!-- Pac-Man -->
                 <div class="project-card">
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <span>🦀</span>
-                        </div>
-                        <div class="project-overlay">
-                            <a href="https://github.com/Shayan-Mazahir/Learning-Rust" target="_blank"
-                                class="overlay-btn">View Project</a>
-                        </div>
+                    <div class="project-header">
+                        <div class="project-icon">👾</div>
+                        <span class="project-status status-dev">DEV</span>
                     </div>
-                    <div class="project-content">
-                        <div class="project-header">
-                            <h3 class="project-title">Learning Rust</h3>
-                            <span class="project-status-badge in-progress">Ongoing</span>
-                        </div>
-                        <p class="project-description">A hands-on journey into systems programming, exploring Rust's
-                            ownership model, memory safety, and zero-cost abstractions. Documenting my transition from
-                            high-level languages to systems-level thinking.</p>
-                        <div class="project-tags">
-                            <span class="tag">Rust</span>
-                            <span class="tag">Systems Programming</span>
-                            <span class="tag">Learning</span>
-                        </div>
-                        <div class="project-footer">
-                            <div class="project-meta">
-                                <span class="meta-item">
-                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-                                        <path
-                                            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
-                                    </svg>
-                                    Open Source
-                                </span>
-                            </div>
-                        </div>
+                    <h3 class="project-title">Pac-Man Clone</h3>
+                    <p class="project-description">
+                        Classic arcade game rebuilt in Java with custom ghost AI, pathfinding algorithms, and collision
+                        detection. Modular architecture makes it easy to extend.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Java</span>
+                        <span class="tag">Processing</span>
+                        <span class="tag">Game Dev</span>
+                        <span class="tag">AI</span>
                     </div>
+                    <a href="https://github.com/Shayan-Mazahir/PAC-MAN" target="_blank" class="project-link">
+                        View Code →
+                    </a>
                 </div>
 
-                <!-- Project 5: games.random (Teaser) -->
-                <div class="project-card mystery">
-                    <div class="mystery-badge">🎲 Coming Soon</div>
-                    <div class="project-image mystery-gradient">
-                        <div class="project-placeholder mystery-icon">
-                            <span>🎮</span>
-                            <span>🤖</span>
-                            <span>✨</span>
-                        </div>
-                        <div class="project-overlay">
-                            <span class="overlay-text">Something fun is cooking...</span>
-                        </div>
+                <!-- Robotics -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">🏆</div>
+                        <span class="project-status status-live">COMPLETE</span>
                     </div>
-                    <div class="project-content">
-                        <div class="project-header">
-                            <h3 class="project-title">games.random</h3>
-                            <span class="project-status-badge in-progress">In Development</span>
-                        </div>
-                        <p class="project-description mystery-text">
-                            <span class="glitch">AI-powered.</span>
-                            <span class="glitch">Game generation.</span>
-                            <span class="glitch">Educational focus.</span>
-                            <br><br>
-                            <em>Stay tuned...</em>
-                        </p>
-                        <div class="project-tags">
-                            <span class="tag mystery-tag">???</span>
-                            <span class="tag mystery-tag">???</span>
-                            <span class="tag mystery-tag">AI</span>
-                            <span class="tag mystery-tag">???</span>
-                        </div>
-                        <div class="project-footer">
-                            <div class="project-meta">
-                                <span class="meta-item">
-                                    🔒 Launching Soon
-                                </span>
-                            </div>
-                        </div>
+                    <h3 class="project-title">RobOlympics Winner</h3>
+                    <p class="project-description">
+                        Led a 15-student robotics team to first place. Designed VEX robot systems, programmed autonomous
+                        routines, and mentored team members.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">VEX</span>
+                        <span class="tag">Robotics</span>
+                        <span class="tag">Leadership</span>
+                        <span class="tag">C++</span>
                     </div>
+                    <span class="project-link disabled">
+                        Competition Project
+                    </span>
                 </div>
 
+                <!-- Learning Rust -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">🦀</div>
+                        <span class="project-status status-dev">LEARNING</span>
+                    </div>
+                    <h3 class="project-title">Learning Rust</h3>
+                    <p class="project-description">
+                        Deep dive into systems programming. Exploring memory safety, ownership models, and zero-cost
+                        abstractions while building practical projects.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Rust</span>
+                        <span class="tag">Systems</span>
+                        <span class="tag">Low-Level</span>
+                    </div>
+                    <a href="https://github.com/Shayan-Mazahir/Learning-Rust" target="_blank" class="project-link">
+                        View Progress →
+                    </a>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="experience">
-        <div class="container">
-            <h2 class="section-title">Experience</h2>
-            <div class="experience-timeline">
-
-                <div class="experience-item">
-                    <div class="experience-dot"></div>
-                    <div class="experience-content">
-                        <h3>Assistant Manager</h3>
-                        <h4>Aspect Systems</h4>
-                        <p class="experience-date">Current</p>
-                        <p>Supporting Roblox anti-cheat service infrastructure and team coordination.</p>
-                    </div>
-                </div>
-
-                <div class="experience-item">
-                    <div class="experience-dot"></div>
-                    <div class="experience-content">
-                        <h3>Robotics Mentor</h3>
-                        <h4>RobOlympics</h4>
-                        <p class="experience-date">High School</p>
-                        <p>Led a 15-student team to first place, teaching VEX robotics programming and system design.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="experience-item">
-                    <div class="experience-dot"></div>
-                    <div class="experience-content">
-                        <h3>Programming Hub Mentor</h3>
-                        <h4>LASS Programming Hub</h4>
-                        <p class="experience-date">High School</p>
-                        <p>Taught Python fundamentals to beginner programmers, creating curriculum and hands-on
-                            projects.</p>
-                    </div>
-                </div>
-
+        <!-- Skills Section -->
+        <section id="skills" class="skills-section">
+            <div class="section-header">
+                <div class="section-label">/ TECH STACK</div>
+                <h2 class="section-title">Technologies I Work With</h2>
+                <p class="section-description">
+                    From high-level frameworks to systems programming, I enjoy exploring the full spectrum of software
+                    development.
+                </p>
             </div>
-        </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <p class="contact-description">I'm always interested in new opportunities, collaborations, or just chatting
-                about tech. Feel free to reach out!</p>
-            <div class="contact-links">
-                <a href="mailto:s.shayan.m@hotmail.com" class="contact-card">
-                    <span class="contact-icon">📧</span>
-                    <span class="contact-label">Email</span>
-                    <span class="contact-value">s.shayan.m@hotmail.com</span>     
-                       </a>
-                <a href="https://github.com/Shayan-Mazahir" target="_blank" class="contact-card">
-                    <span class="contact-icon">💻</span>
-                    <span class="contact-label">GitHub</span>
-                    <span class="contact-value">Shayan-Mazahir</span>
+            <div class="skills-grid">
+                <div class="skill-item">Python</div>
+                <div class="skill-item">Java</div>
+                <div class="skill-item">JavaScript</div>
+                <div class="skill-item">Rust</div>
+                <div class="skill-item">Flask</div>
+                <div class="skill-item">Django</div>
+                <div class="skill-item">Node.js</div>
+                <div class="skill-item">MongoDB</div>
+                <div class="skill-item">Discord.js</div>
+                <div class="skill-item">Arduino</div>
+                <div class="skill-item">VEX Robotics</div>
+                <div class="skill-item">Git</div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="section-header">
+                <div class="section-label">/ GET IN TOUCH</div>
+                <h2 class="section-title">Let's Build Something</h2>
+                <p class="section-description">
+                    Always open to discussing new projects, opportunities, or just talking tech.
+                </p>
+            </div>
+
+            <div class="contact-grid">
+                <a href="mailto:s26mazah@uwaterloo.ca" class="contact-card">
+                    <div class="contact-icon">📧</div>
+                    <div class="contact-label">EMAIL</div>
+                    <div class="contact-value">syed.shayan.mazahir@gmail.com</div>
                 </a>
-                <div class="contact-card">
-                    <span class="contact-icon">💬</span>
-                    <span class="contact-label">Discord</span>
-                    <span class="contact-value">mr.raza</span>
-                </div>
+                <a href="https://github.com/Shayan-Mazahir" target="_blank" class="contact-card">
+                    <div class="contact-icon">💻</div>
+                    <div class="contact-label">GITHUB</div>
+                    <div class="contact-value">Shayan-Mazahir</div>
+                </a>
+                <a href="https://linkedin.com/in/shayan-mazahir" target="_blank" class="contact-card">
+                    <div class="contact-icon">💼</div>
+                    <div class="contact-label">LINKEDIN</div>
+                    <div class="contact-value">shayan-mazahir</div>
+                </a>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-
-    <!-- Footer -->
-    <footer class="footer">
-        <p>I'm not inclined to resign to maturity - Psych.</p>
-    </footer>
+        <!-- Footer -->
+        <footer class="footer">
+            <p>© 2026 Shayan Mazahir • Built with code and caffeine</p>
+        </footer>
+    </main>
 
     <script src="script.js"></script>
 </body>

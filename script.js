@@ -1,4 +1,4 @@
-// Smooth scrolling for navigation links
+// Smooth Scrolling
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -12,47 +12,29 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Create animated particles in hero
-function createParticles() {
-    const particlesContainer = document.getElementById('particles');
-    if (!particlesContainer) return;
-
-    for (let i = 0; i < 30; i++) {
-        const particle = document.createElement('div');
-        particle.style.position = 'absolute';
-        particle.style.width = Math.random() * 4 + 2 + 'px';
-        particle.style.height = particle.style.width;
-        particle.style.background = 'rgba(255, 255, 255, 0.3)';
-        particle.style.borderRadius = '50%';
-        particle.style.left = Math.random() * 100 + '%';
-        particle.style.top = Math.random() * 100 + '%';
-        particle.style.animation = `float ${Math.random() * 10 + 15}s infinite ease-in-out`;
-        particle.style.animationDelay = Math.random() * 5 + 's';
-        particlesContainer.appendChild(particle);
-    }
-}
-
-createParticles();
-
-// Navbar scroll effect
-let lastScroll = 0;
-const navbar = document.getElementById('navbar');
-
+// Scroll Progress Bar
 window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-
-    if (currentScroll <= 0) {
-        navbar.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)';
-    } else {
-        navbar.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)';
-    }
-
-    lastScroll = currentScroll;
+    const winScroll = document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    document.querySelector('.scroll-progress').style.width = scrolled + '%';
 });
 
-// Active nav link on scroll
+// Custom Cursor
+const cursorDot = document.querySelector('.cursor-dot');
+const cursorOutline = document.querySelector('.cursor-outline');
+
+window.addEventListener('mousemove', (e) => {
+    cursorDot.style.left = e.clientX + 'px';
+    cursorDot.style.top = e.clientY + 'px';
+
+    cursorOutline.style.left = e.clientX + 'px';
+    cursorOutline.style.top = e.clientY + 'px';
+});
+
+// Active Nav Item on Scroll
 const sections = document.querySelectorAll('section');
-const navLinks = document.querySelectorAll('.nav-link');
+const navItems = document.querySelectorAll('.nav-item');
 
 window.addEventListener('scroll', () => {
     let current = '';
@@ -60,119 +42,147 @@ window.addEventListener('scroll', () => {
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
-        if (window.pageYOffset >= (sectionTop - 100)) {
+        if (window.pageYOffset >= (sectionTop - 200)) {
             current = section.getAttribute('id');
         }
     });
 
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href').slice(1) === current) {
-            link.classList.add('active');
+    navItems.forEach(item => {
+        item.classList.remove('active');
+        if (item.getAttribute('href') === '#' + current) {
+            item.classList.add('active');
         }
     });
 });
 
-// Enhanced Intersection Observer for staggered animations
-const observerOptions = {
-    threshold: 0.15,
-    rootMargin: '0px 0px -50px 0px'
-};
+// Stats Counter Animation with proper formatting
+function animateValue(element, start, end, duration) {
+    let startTimestamp = null;
+    const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        const value = Math.floor(progress * (end - start) + start);
 
-const observer = new IntersectionObserver((entries) => {
+        // Format the display
+        if (end >= 1000) {
+            element.textContent = (value / 1000).toFixed(1) + 'K+';
+        } else if (end > 10) {
+            element.textContent = value + '+';
+        } else {
+            element.textContent = value + '+';
+        }
+
+        if (progress < 1) {
+            window.requestAnimationFrame(step);
+        } else {
+            // Ensure final value is correct
+            if (end >= 1000) {
+                element.textContent = (end / 1000) + 'K+';
+            } else {
+                element.textContent = end + '+';
+            }
+        }
+    };
+    window.requestAnimationFrame(step);
+}
+
+// Trigger stats animation on page load
+window.addEventListener('DOMContentLoaded', () => {
+    const statValues = document.querySelectorAll('.stat-value');
+
+    // Small delay for dramatic effect
+    setTimeout(() => {
+        statValues.forEach(stat => {
+            const target = parseInt(stat.getAttribute('data-target'));
+            animateValue(stat, 0, target, 2000);
+        });
+    }, 500);
+});
+
+// Also trigger when scrolling into view
+const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const statValues = entry.target.querySelectorAll('.stat-value');
+            statValues.forEach(stat => {
+                const target = parseInt(stat.getAttribute('data-target'));
+                animateValue(stat, 0, target, 2000);
+            });
+            statsObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.5 });
+
+const statsGrid = document.querySelector('.stats-grid');
+if (statsGrid) {
+    statsObserver.observe(statsGrid);
+}
+
+// Card Hover Glow Effect
+const projectCards = document.querySelectorAll('.project-card');
+
+projectCards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+        card.style.setProperty('--mouse-x', x + '%');
+        card.style.setProperty('--mouse-y', y + '%');
+    });
+});
+
+// Magnetic Button Effect
+const magneticBtns = document.querySelectorAll('.cta-btn');
+
+magneticBtns.forEach(btn => {
+    btn.addEventListener('mouseenter', function (e) {
+        this.style.transform = 'scale(1.05)';
+    });
+
+    btn.addEventListener('mouseleave', function () {
+        this.style.transform = 'scale(1)';
+    });
+});
+
+// Console Easter Egg
+console.log('%c🚀 Hey there!', 'font-size: 24px; font-weight: bold; color: #00ffff;');
+console.log('%cLooking at my code? I like that.', 'font-size: 14px; color: #a0a0a0;');
+console.log('%cLet\'s build something: s26mazah@uwaterloo.ca', 'font-size: 14px; color: #00ffff; font-weight: bold;');
+
+// Intersection Observer for Fade-in Animations
+const fadeElements = document.querySelectorAll('.project-card, .skill-item, .contact-card');
+
+const fadeObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
             setTimeout(() => {
                 entry.target.style.opacity = '1';
                 entry.target.style.transform = 'translateY(0)';
             }, index * 100);
+            fadeObserver.unobserve(entry.target);
         }
     });
-}, observerOptions);
+}, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+});
 
-// Observe elements for animation
-document.querySelectorAll('.project-card, .experience-item, .contact-card').forEach(el => {
+fadeElements.forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(30px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
-    observer.observe(el);
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    fadeObserver.observe(el);
 });
 
-// Animate stats numbers on scroll
-const statNumbers = document.querySelectorAll('.stat-number');
-let hasAnimated = false;
-
-const statsObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting && !hasAnimated) {
-            hasAnimated = true;
-            statNumbers.forEach((stat, index) => {
-                const text = stat.textContent;
-                const number = parseInt(text.replace(/\D/g, ''));
-                const suffix = text.replace(/[0-9]/g, '');
-
-                animateNumber(stat, 0, number, suffix, 2000, index * 200);
-            });
-        }
-    });
-}, { threshold: 0.5 });
-
-const heroStats = document.querySelector('.hero-stats');
-if (heroStats) {
-    statsObserver.observe(heroStats);
-}
-
-function animateNumber(element, start, end, suffix, duration, delay) {
-    setTimeout(() => {
-        const range = end - start;
-        const increment = range / (duration / 16);
-        let current = start;
-
-        const timer = setInterval(() => {
-            current += increment;
-            if (current >= end) {
-                element.textContent = end + suffix;
-                clearInterval(timer);
-            } else {
-                element.textContent = Math.floor(current) + suffix;
-            }
-        }, 16);
-    }, delay);
-}
-
-// Skill tags hover effect - randomize colors
-const skillTags = document.querySelectorAll('.skill-tag');
-const colors = [
-    'linear-gradient(135deg, #667eea, #764ba2)',
-    'linear-gradient(135deg, #f093fb, #f5576c)',
-    'linear-gradient(135deg, #4facfe, #00f2fe)',
-    'linear-gradient(135deg, #43e97b, #38f9d7)',
-    'linear-gradient(135deg, #fa709a, #fee140)'
-];
-
-skillTags.forEach(tag => {
-    tag.addEventListener('mouseenter', function () {
-        const randomColor = colors[Math.floor(Math.random() * colors.length)];
-        this.style.background = randomColor;
+// Cursor size change on hover
+document.querySelectorAll('a, button, .project-card, .skill-item').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+        cursorOutline.style.width = '50px';
+        cursorOutline.style.height = '50px';
     });
 
-    tag.addEventListener('mouseleave', function () {
-        this.style.background = '';
+    el.addEventListener('mouseleave', () => {
+        cursorOutline.style.width = '30px';
+        cursorOutline.style.height = '30px';
     });
-});
-
-// Add parallax effect to hero
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const heroContent = document.querySelector('.hero-content');
-    const particles = document.getElementById('particles');
-
-    if (heroContent && scrolled < window.innerHeight) {
-        heroContent.style.transform = `translateY(${scrolled * 0.5}px)`;
-        heroContent.style.opacity = 1 - (scrolled / window.innerHeight) * 0.8;
-    }
-
-    if (particles && scrolled < window.innerHeight) {
-        particles.style.transform = `translateY(${scrolled * 0.3}px)`;
-    }
 });

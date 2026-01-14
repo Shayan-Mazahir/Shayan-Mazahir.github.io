@@ -4,295 +4,271 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>Shayan Mazahir - Developer & Builder</title>
+    <title>Shayan Mazahir - Developer</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono&display=swap"
         rel="stylesheet">
 </head>
 
 <body>
-    <div class="grain"></div>
-    <div class="scroll-progress"></div>
-    <div class="cursor-dot"></div>
-    <div class="cursor-outline"></div>
-
-    <!-- Sidebar Navigation -->
-    <nav class="sidebar">
-        <div class="logo">
-            <img src="logo.png" alt="Logo" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">Shayan Mazahir</a>
+            <div class="nav-links">
+                <a href="#projects">Projects</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+                <a href="resume.pdf" target="_blank" class="resume-link">Resume</a>
+                <a href="https://github.com/Shayan-Mazahir" target="_blank" class="github-link">GitHub ↗</a>
+            </div>
         </div>
-        <div class="nav-items">
-            <a href="#home" class="nav-item active">🏠</a>
-            <a href="#projects" class="nav-item">💻</a>
-            <a href="#skills" class="nav-item">⚡</a>
-            <a href="#contact" class="nav-item">📬</a>
-        </div>
-        </nav>
+    </nav>
 
-    <!-- Main Content -->
-    <main class="main-content">
-        <!-- Hero Section -->
-        <section id="home" class="hero-section">
-            <div class="grid-bg"></div>
+    <main>
+        <section class="hero">
             <div class="hero-content">
                 <div class="status-badge">
                     <span class="status-dot"></span>
-                    OPEN TO OPPORTUNITIES
+                    Open to Summer 2026 Internships
                 </div>
-                <h1 class="hero-title">
-                    Hi, I'm <span class="glitch" data-text="Shayan">Shayan</span>
-                </h1>
-                <p class="hero-subtitle">
-                    > First Year @ UWaterloo • Builder • Problem Solver
+                <h1>Building things that <span class="highlight">actually work</span></h1>
+                <p class="subtitle">
+                    First-year @ UWaterloo • Geomatics + CS Minor
                 </p>
-                <p class="hero-description">
-                    I turn ideas into reality through code. From Discord bots serving 5K+ users to robotics systems
-                    winning competitions, I build things that matter.
+                <p class="description">
+                    I build practical software - from AI-powered tools to robotics systems.
+                    Recently won "Best Product" at UW's CS Club for an AI code generation platform.
                 </p>
-                <div class="cta-buttons">
-                    <a href="#projects" class="cta-btn cta-primary">
-                        View My Work →
-                    </a>
-                    <a href="https://github.com/Shayan-Mazahir" target="_blank" class="cta-btn cta-secondary">
-                        GitHub Profile
-                    </a>
+                <div class="hero-links">
+                    <a href="#projects" class="btn-primary">View Projects</a>
+                    <a href="#contact" class="btn-secondary">Get in Touch</a>
                 </div>
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <span class="stat-value" data-target="6">0</span>
-                        <span class="stat-label">years_coding</span>
+                <div class="quick-stats">
+                    <div class="stat">
+                        <strong>3+</strong>
+                        <span>Notable Projects</span>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-value" data-target="20">0</span>
-                        <span class="stat-label">projects_built</span>
+                    <div class="stat">
+                        <strong>5K+</strong>
+                        <span>Users</span>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-value" data-target="5000">0</span>
-                        <span class="stat-label">users_served</span>
+                    <div class="stat">
+                        <strong>🏆</strong>
+                        <span>Award Winner</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Projects Section -->
-        <section id="projects" class="projects-section">
-            <div class="section-header">
-                <div class="section-label">/ SELECTED WORK</div>
-                <h2 class="section-title">Featured Projects</h2>
-                <p class="section-description">
-                    From AI platforms to robotics systems, here's what I've been building.
-                </p>
+        <section id="projects">
+            <h2>Featured Projects</h2>
+
+            <div class="project featured">
+                <div class="project-badge">Featured</div>
+                <div class="project-content">
+                    <div class="project-header">
+                        <h3>games.random</h3>
+                        <span class="award">🏆 Best Product - UW CS Club</span>
+                    </div>
+                    <p>AI-powered platform that generates playable JavaScript games from plain English descriptions.
+                        Features real-time code highlighting, validation, and educational feedback.</p>
+                    <div class="tech-stack">
+                        <span>Node.js</span>
+                        <span>Claude API</span>
+                        <span>MongoDB</span>
+                        <span>Monaco Editor</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Shayan-Mazahir/games.random" target="_blank"
+                            class="link-primary">View on GitHub →</a>
+                        <span class="meta">3 Contributors • 5K+ Lines</span>
+                    </div>
+                </div>
             </div>
 
             <div class="projects-grid">
-                <!-- games.random - FEATURED -->
-                <div class="project-card featured-card">
-                    <div class="project-header">
-                        <div class="project-icon">🎮</div>
-                        <span class="project-status status-live">LIVE</span>
-                    </div>
-                    <div class="project-title-row">
-                        <h3 class="project-title">games.random</h3>
-                        <span class="trophy">🏆</span>
-                    </div>
-                    <p class="project-subtitle">
-                        🥇 Best Product - UW CS Club Project Program
-                    </p>
-                    <p class="project-description">
-                        AI-powered platform that generates games from plain English and teaches programming through
-                        real-time code highlighting. Built with Claude API, Monaco Editor, and Express.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">Node.js</span>
-                        <span class="tag">Claude AI</span>
-                        <span class="tag">MongoDB</span>
-                        <span class="tag">Monaco</span>
-                    </div>
-                    <div class="project-footer">
-                        <a href="https://github.com/Shayan-Mazahir/games.random" target="_blank" class="project-link">
-                            View on GitHub →
-                        </a>
-                        <span class="project-meta">👥 3 Contributors</span>
+                <div class="project">
+                    <h3>RobOlympics Winner 🥇</h3>
+                    <p>Led 15-student robotics team to first place. Developed pathfinding algorithms and sensor fusion
+                        for autonomous navigation using VEX platform.</p>
+                    <div class="tech-stack">
+                        <span>VEX Robotics</span>
+                        <span>C++</span>
+                        <span>Autonomous Systems</span>
                     </div>
                 </div>
 
-                <!-- Club Directory -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon">🔐</div>
-                        <span class="project-status status-live">LIVE</span>
+                <div class="project">
+                    <h3>Discord Bot Infrastructure</h3>
+                    <p>Production bots serving 5,000+ users across 15+ communities. Features custom moderation,
+                        automation, and real-time event handling.</p>
+                    <div class="tech-stack">
+                        <span>Discord.js</span>
+                        <span>Python</span>
+                        <span>MongoDB</span>
                     </div>
-                    <h3 class="project-title">Club Directory Backend</h3>
-                    <p class="project-description">
-                        Flask REST API powering my high school's club management platform. Features OAuth
-                        authentication, SSL/HTTPS, and MongoDB for data persistence.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">Flask</span>
-                        <span class="tag">MongoDB</span>
-                        <span class="tag">OAuth</span>
+                </div>
+
+                <div class="project">
+                    <h3>Club Directory Backend</h3>
+                    <p>Flask REST API for high school club management with OAuth authentication, SSL/HTTPS, and MongoDB
+                        persistence.</p>
+                    <div class="tech-stack">
+                        <span>Flask</span>
+                        <span>OAuth</span>
+                        <span>MongoDB</span>
                     </div>
                     <a href="https://github.com/Louise-Arbor-SS-Programming-Hub/Back-end" target="_blank"
-                        class="project-link">
-                        View Code →
-                    </a>
+                        class="link-primary">View Code →</a>
                 </div>
 
-                <!-- Pac-Man -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon">👾</div>
-                        <span class="project-status status-dev">DEV</span>
+                <div class="project">
+                    <h3>Learning Rust 🦀</h3>
+                    <p>Exploring systems programming through Rust. Building practical projects to understand memory
+                        safety, ownership, and zero-cost abstractions.</p>
+                    <div class="tech-stack">
+                        <span>Rust</span>
+                        <span>Systems Programming</span>
                     </div>
-                    <h3 class="project-title">Pac-Man Clone</h3>
-                    <p class="project-description">
-                        Classic arcade game rebuilt in Java with custom ghost AI, pathfinding algorithms, and collision
-                        detection. Modular architecture makes it easy to extend.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">Java</span>
-                        <span class="tag">Processing</span>
-                        <span class="tag">Game Dev</span>
-                        <span class="tag">AI</span>
-                    </div>
-                    <a href="https://github.com/Shayan-Mazahir/PAC-MAN" target="_blank" class="project-link">
-                        View Code →
-                    </a>
-                </div>
-
-                <!-- Robotics -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon">🏆</div>
-                        <span class="project-status status-live">COMPLETE</span>
-                    </div>
-                    <h3 class="project-title">RobOlympics Winner</h3>
-                    <p class="project-description">
-                        Led a 15-student robotics team to first place. Designed VEX robot systems, programmed autonomous
-                        routines, and mentored team members.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">VEX</span>
-                        <span class="tag">Robotics</span>
-                        <span class="tag">Leadership</span>
-                        <span class="tag">C++</span>
-                    </div>
-                    <span class="project-link disabled">
-                        Competition Project
-                    </span>
-                </div>
-
-                <!-- Learning Rust-->
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon">🦀</div>
-                        <span class="project-status status-dev">LEARNING</span>
-                    </div>
-                    <h3 class="project-title">Learning Rust</h3>
-                    <p class="project-description">
-                        Deep dive into systems programming. Exploring memory safety, ownership models, and zero-cost
-                        abstractions while building practical projects.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">Rust</span>
-                        <span class="tag">Systems</span>
-                        <span class="tag">Low-Level</span>
-                    </div>
-                    <a href="https://github.com/Shayan-Mazahir/Learning-Rust" target="_blank" class="project-link">
-                        View Progress →
-                    </a>
-                </div>
-                <!-- Discord Bots -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon">🤖</div>
-                        <span class="project-status status-private">PRIVATE</span>
-                    </div>
-                    <h3 class="project-title">Discord Bot Suite</h3>
-                    <p class="project-description">
-                        Custom moderation and utility bots deployed across 15+ servers. Built with Discord.js and
-                        Discord.py, serving 5,000+ active users daily.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">JavaScript</span>
-                        <span class="tag">Python</span>
-                        <span class="tag">Discord.js</span>
-                        <span class="tag">MongoDB</span>
-                    </div>
-                    <span class="project-link disabled">
-                        Code Available on Request
-                    </span>
+                    <a href="https://github.com/Shayan-Mazahir/Learning-Rust" target="_blank" class="link-primary">View
+                        Progress →</a>
                 </div>
             </div>
         </section>
 
-        <!-- Skills Section -->
-        <section id="skills" class="skills-section">
-            <div class="section-header">
-                <div class="section-label">/ TECH STACK</div>
-                <h2 class="section-title">Technologies I Work With</h2>
-                <p class="section-description">
-                    From high-level frameworks to systems programming, I enjoy exploring the full spectrum of software
-                    development.
-                </p>
-            </div>
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I'm a first-year Geomatics student at the University of Waterloo with a Computer Science minor.
+                        I build practical software that solves real problems - whether that's AI-powered tools,
+                        production systems, or robotics.
+                    </p>
+                    <p>
+                        I started programming by building Discord bots and scaled them to serve thousands of users.
+                        More recently, I won "Best Product" at UW's CS Club competition for games.random,
+                        an AI-powered code generation platform.
+                    </p>
+                    <p>
+                        Currently exploring systems programming with Rust and looking for Summer 2026 internships
+                        in software development, robotics, or cybersecurity.
+                    </p>
+                </div>
 
-            <div class="skills-grid">
-                <div class="skill-item">Python</div>
-                <div class="skill-item">Java</div>
-                <div class="skill-item">JavaScript</div>
-                <div class="skill-item">Rust</div>
-                <div class="skill-item">Flask</div>
-                <div class="skill-item">Django</div>
-                <div class="skill-item">Node.js</div>
-                <div class="skill-item">MongoDB</div>
-                <div class="skill-item">Discord.js</div>
-                <div class="skill-item">Arduino</div>
-                <div class="skill-item">VEX Robotics</div>
-                <div class="skill-item">Git</div>
+                <div class="skills-container">
+                    <h3>Technical Skills</h3>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h4>Languages</h4>
+                            <div class="skills">
+                                <span>Python</span>
+                                <span>JavaScript</span>
+                                <span>Java</span>
+                                <span>Rust</span>
+                                <span>C++</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Frameworks & Tools</h4>
+                            <div class="skills">
+                                <span>Node.js</span>
+                                <span>Express</span>
+                                <span>Flask</span>
+                                <span>MongoDB</span>
+                                <span>PostgreSQL</span>
+                                <span>Git</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Other</h4>
+                            <div class="skills">
+                                <span>Claude API</span>
+                                <span>Discord.js</span>
+                                <span>REST APIs</span>
+                                <span>VEX Robotics</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="contact-section">
-            <div class="section-header">
-                <div class="section-label">/ GET IN TOUCH</div>
-                <h2 class="section-title">Let's Build Something</h2>
-                <p class="section-description">
-                    Always open to discussing new projects, opportunities, or just talking tech.
-                </p>
-            </div>
-
-            <div class="contact-grid">
-                <a href="mailto:syed.shayan.mazahir@gmail.com" class="contact-card">
-                    <div class="contact-icon">📧</div>
-                    <div class="contact-label">EMAIL</div>
-                    <div class="contact-value">syed.shayan.mazahir@gmail.com</div>
-                </a>
-                <a href="https://github.com/Shayan-Mazahir" target="_blank" class="contact-card">
-                    <div class="contact-icon">💻</div>
-                    <div class="contact-label">GITHUB</div>
-                    <div class="contact-value">Shayan-Mazahir</div>
-                </a>
-                <a href="https://linkedin.com/in/shayan-mazahir" target="_blank" class="contact-card">
-                    <div class="contact-icon">💼</div>
-                    <div class="contact-label">LINKEDIN</div>
-                    <div class="contact-value">shayan-mazahir</div>
-                </a>
+        <section id="certificates">
+            <h2>Certifications</h2>
+            <div class="certificates-grid">
+                <div class="certificate-card">
+                    <div class="cert-header">
+                        <div class="cert-icon">📜</div>
+                        <span class="cert-status in-progress">In Progress</span>
+                    </div>
+                    <h3>Google Cybersecurity Professional Certificate</h3>
+                    <p class="cert-issuer">Google via Coursera</p>
+                    <p class="cert-description">
+                        Security fundamentals, risk management, network security, threat detection, and incident
+                        response.
+                    </p>
+                    <div class="cert-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 37%"></div>
+                        </div>
+                        <span class="progress-text">3/8 courses completed • 93% average</span>
+                    </div>
+                    <div class="cert-courses">
+                        <div class="course completed">
+                            <span class="course-name">Foundations of Cybersecurity</span>
+                            <span class="course-grade">90.50%</span>
+                        </div>
+                        <div class="course completed">
+                            <span class="course-name">Play It Safe: Manage Security Risks</span>
+                            <span class="course-grade">95.25%</span>
+                        </div>
+                        <div class="course completed">
+                            <span class="course-name">Connect and Protect: Networks and Network Security</span>
+                            <span class="course-grade">93.46%</span>
+                        </div>
+                    </div>
+                    <p class="cert-completion">Expected completion: May 2026</p>
+                </div>
             </div>
         </section>
 
-        <!-- Footer -->
-        <footer class="footer">
-            <p>© 2026 Shayan Mazahir • Built with code and caffeine</p>
-        </footer>
+        <section id="contact">
+            <div class="contact-content">
+                <h2>Let's Build Something</h2>
+                <p>Open to discussing internships, projects, or just talking tech.</p>
+                <div class="contact-grid">
+                    <a href="mailto:syed.shayan.mazahir@gmail.com" class="contact-card">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-info">
+                            <strong>Email</strong>
+                            <span>syed.shayan.mazahir@gmail.com</span>
+                        </div>
+                    </a>
+                    <a href="https://github.com/Shayan-Mazahir" target="_blank" class="contact-card">
+                        <div class="contact-icon">💻</div>
+                        <div class="contact-info">
+                            <strong>GitHub</strong>
+                            <span>Shayan-Mazahir</span>
+                        </div>
+                    </a>
+                    <a href="https://linkedin.com/in/shayan-mazahir" target="_blank" class="contact-card">
+                        <div class="contact-icon">💼</div>
+                        <div class="contact-info">
+                            <strong>LinkedIn</strong>
+                            <span>shayan-mazahir</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <script src="script.js"></script>
+    <footer>
+        <p>© 2026 Shayan Mazahir • Built with code and curiosity</p>
+    </footer>
 </body>
 
 </html>

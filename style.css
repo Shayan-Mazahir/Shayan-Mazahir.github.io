@@ -261,6 +261,25 @@ h3 {
     transition: all 0.3s ease;
 }
 
+.project-image-container {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+}
+
+.project-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.project:hover .project-image {
+    transform: scale(1.05);
+}
+
 .project:hover {
     border-color: var(--accent);
     transform: translateY(-4px);

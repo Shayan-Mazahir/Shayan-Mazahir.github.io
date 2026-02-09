@@ -259,6 +259,19 @@ h3 {
     border: 1px solid var(--border);
     border-radius: 12px;
     transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Cards WITH images - let them expand naturally */
+.project:has(.project-image-container) {
+    height: auto;
+}
+
+/* Cards WITHOUT images - compact height */
+.project:not(:has(.project-image-container)) {
+    height: fit-content;
 }
 
 .project-image-container {
@@ -267,12 +280,14 @@ h3 {
     border-radius: 8px;
     overflow: hidden;
     border: 1px solid var(--border);
+    aspect-ratio: auto;
 }
 
 .project-image {
     width: 100%;
     height: auto;
     display: block;
+    object-fit: cover;
     transition: transform 0.3s ease;
 }
 
@@ -315,6 +330,9 @@ h3 {
 
 .project-content {
     margin-top: 1rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .project-header {
@@ -361,6 +379,7 @@ h3 {
     align-items: center;
     flex-wrap: wrap;
     gap: 1rem;
+    margin-top: auto;
 }
 
 .link-primary {
@@ -381,8 +400,9 @@ h3 {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
+    align-items: start;
 }
 
 /* About */

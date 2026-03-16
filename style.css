@@ -295,6 +295,18 @@ h3 {
     transform: scale(1.05);
 }
 
+/* Project note styling */
+.project-note {
+    margin-top: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    background: rgba(255, 255, 0, 0.1);
+    border-left: 3px solid #ffff00;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    color: #ffff00;
+    font-style: italic;
+}
+
 .project:hover {
     border-color: var(--accent);
     transform: translateY(-4px);
